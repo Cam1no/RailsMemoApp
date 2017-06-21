@@ -1,5 +1,11 @@
 class Api::MemosController < ApplicationController
 
+
+  def index
+    @memos = Memo.all
+    render json: @memos
+  end
+
   def create
     memo = Memo.new(create_params)
 
